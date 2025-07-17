@@ -3,7 +3,7 @@
 **Tessy-Multi-Tool** aplikacja desktopowa napisana w Pythonie, zawiera zestaw pomocniczych narzędzi ułatwiających pracę z TESSY. W skład aplikacji wchodzą :
 
 - **Stub Generator** – automatyczne generowanie szkieletów (stubów) funkcji na podstawie zdefiniowanego szablonu.
-- **Typical Values Manager** – zarządzanie zestawami typowych wartości, które można szybko wklejać do CTE.
+- **Typical Values** – zestaw typowych wartości, które można szybko wklejać do CTE.
 
 ---
 
