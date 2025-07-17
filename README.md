@@ -57,9 +57,9 @@ Aby uruchomić graficzny interfejs aplikacji uruchom plik main.pyw
 
 2. Typical Values
 * Z listy wybierz typ danych, ponizej pojawią się wartosci dla danego typu:
-+ minimalna
-+ minimalna + 1
-+ srodkowa
-+ maksymalna -1
-+ maksymalna 
+   * minimalna
+   * minimalna + 1
+   * srodkowa
+   * maksymalna -1
+   * maksymalna 
 * Po kliknięciu w daną wartosc kopiuje się ona do schowka w formacie odpowiednim do wklejenia w module CTE Tessy
