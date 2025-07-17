@@ -47,19 +47,19 @@ Aby uruchomić graficzny interfejs aplikacji uruchom plik main.pyw
 ## Przykłady użycia
 
 1. Stub Generator
-* Skopiuj definicję funkcji (np. bool foo(int x, int * y) ) z Twojego kodu lub z modułu Tessy.
-* Kliknij przycisk Dodaj.
-* Pojawi się okno ze wszystkimi parametrami wykrytymi w definicji — domyślnie wszystkie są zaznaczone. Odznacz te, których nie chcesz uwzględniać.
-* Kliknij Zatwierdź.
-* Możesz dodać kolejną funkcję wybierając Dodaj, lub przejść dalej, klikając Generuj.
-* W sekcji podglądu zostaną wygenerowane definicje i deklaracje zmiennych, prolog oraz stub funkcji. 
-* Aby zapisać wynik do pliku, kliknij przycisk Zapisz.
+ * Skopiuj definicję funkcji (np. bool foo(int x, int * y) ) z Twojego kodu lub z modułu Tessy.
+ * Kliknij przycisk Dodaj.
+ * Pojawi się okno ze wszystkimi parametrami wykrytymi w definicji — domyślnie wszystkie są zaznaczone. Odznacz te, których nie chcesz uwzględniać.
+ * Kliknij Zatwierdź.
+ * Możesz dodać kolejną funkcję wybierając Dodaj, lub przejść dalej, klikając Generuj.
+ * W sekcji podglądu zostaną wygenerowane definicje i deklaracje zmiennych, prolog oraz stub funkcji. 
+ * Aby zapisać wynik do pliku, kliknij przycisk Zapisz.
 
 2. Typical Values
-* Z listy wybierz typ danych, ponizej pojawią się wartosci dla danego typu:
-   * minimalna
-   * minimalna + 1
-   * srodkowa
-   * maksymalna -1
-   * maksymalna 
-* Po kliknięciu w daną wartosc kopiuje się ona do schowka w formacie odpowiednim do wklejenia w module CTE Tessy
+ * Z listy wybierz typ danych, ponizej pojawią się wartosci dla danego typu:
+  * minimalna
+  * minimalna + 1
+  * srodkowa
+  * maksymalna -1
+  * maksymalna 
+ * Po kliknięciu w daną wartosc kopiuje się ona do schowka w formacie odpowiednim do wklejenia w module CTE Tessy
