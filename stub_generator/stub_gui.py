@@ -47,8 +47,8 @@ class TessyGUI:
     def show_argument_selector_popup(self, master, arguments, on_confirm_callback):
         popup = tk.Toplevel(master)
         popup.title("Wybierz argumenty")
-        popup.transient(master)       # Ustaw jako popup
-        popup.grab_set()              # Modalne okno
+        popup.transient(master)
+        popup.grab_set()       
 
         check_vars = []
 
@@ -65,6 +65,7 @@ class TessyGUI:
             on_confirm_callback(selected_args)
 
         tk.Button(popup, text="Zatwierdź", command=on_submit).pack(pady=10)
+        
 
     def add_function(self):
         sig = pyperclip.paste().strip()
@@ -142,16 +143,16 @@ class TessyGUI:
         if not sel:
             messagebox.showwarning("Brak wyboru", "Nie wybrano funkcji do edycji.")
             return
-        idx = sel[0]  # zachowujemy zaznaczenie nawet po edycji pola
+        idx = sel[0]
         try:
             new_calls = int(self.call_entry.get())
         except ValueError:
             messagebox.showerror("Błąd", "Podaj poprawną liczbę wywołań.")
             return
-        # Aktualizacja wewnętrznej listy
+        
         self.stored_functions[idx]['n_calls'] = new_calls
         func_name = self.stored_functions[idx]['name']
-        # Odświeżenie listboxa
+        
         self.func_listbox.delete(idx)
         self.func_listbox.insert(idx, f"{func_name} (calls: {new_calls})")
         self.func_listbox.select_set(idx)

@@ -1,4 +1,4 @@
-from stub_generator.utils import extract_base_type, map_type_to_macro
+from stub_generator.utils import extract_base_type, map_type_to_macro, map_macro_to_type
 
 
 def gen_declarations(funName, arguments, retType, nOfCalls):
@@ -44,9 +44,16 @@ def gen_stub(funName, arguments, retType):
         base = extract_base_type(arg.type)
         macro = map_type_to_macro(base)
         if '*' in arg.type:
-            stub += f"    {macro}(\"Function {funName}(), Parameter *{arg.name}\", *{arg.name}, ==, TS_{funName}_{arg.name}[TS_CALL_COUNT]);\n"
-            stub += f"    if({arg.name} != 0){{\n"
-            stub += f"    \t*{arg.name} = TS_{funName}_{arg.name}_NewValue[TS_CALL_COUNT];\n"
+            if('void' in arg.type or 'void*' in arg.type):
+                cast_type = map_macro_to_type(macro)
+                stub += f"    {macro}(\"Function {funName}(), Parameter *{arg.name}\", *(({cast_type} *){arg.name}), ==, TS_{funName}_{arg.name}[TS_CALL_COUNT]);\n"
+                stub += f"    if({arg.name} != 0){{\n"
+                stub += f"    \t*(({cast_type} *){arg.name}) = TS_{funName}_{arg.name}_NewValue[TS_CALL_COUNT];\n"
+            else:
+                stub += f"    {macro}(\"Function {funName}(), Parameter *{arg.name}\", *{arg.name}, ==, TS_{funName}_{arg.name}[TS_CALL_COUNT]);\n"
+                stub += f"    if({arg.name} != 0){{\n"
+                stub += f"    \t*{arg.name} = TS_{funName}_{arg.name}_NewValue[TS_CALL_COUNT];\n"
+            
             stub += f"    }}\n"
         elif '&' in arg.type:
             stub += f"    {macro}(\"Function {funName}(), Parameter {arg.name}\", {arg.name}, ==, TS_{funName}_{arg.name}[TS_CALL_COUNT]);\n"
